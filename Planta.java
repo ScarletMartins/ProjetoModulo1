@@ -17,8 +17,6 @@ public abstract class Planta {
 
     abstract public void colocarNoSol();
 
-    abstract public void podar();
-
     abstract public void indicacao();
 
     public Planta(String raiz, String aspecto, String clima) {

@@ -12,7 +12,7 @@ public class Lirio extends Planta {
 
     @Override
     public void regar() {
-        System.out.println("\nBorrife água uma vez na sua planta");
+        System.out.println("\nRegue sua planta de tres a quatro vezes por semana");
     }
 
     @Override
@@ -31,19 +31,12 @@ public class Lirio extends Planta {
     }
 
     @Override
-    public void podar() {
-        System.out.println("\nRealize a poda da sua planta");
-    }
-
-    @Override
     public void indicacao() {
         System.out.println("\nCuidados de acordo com o clima");
     }
     
     public void info() {
-    	System.out.println("\n-------------------------------------------------------------------------");
-        System.out.println("\n\t\tDados gerais da sua planta: " + "\n\nEspécie: Lirio \nRaíz: " + getRaiz() + "\nAspecto: "+ getAspecto() + "\nClima: " + getClima());
-        System.out.println("\nA presença de plantas em casa só traz benefícios: além de deixar qualquer ambiente "
-        		+ "mais charmoso e aconchegante, elas ainda melhoram a qualidade do ar.");
-    }
+    	System.out.println("\n\t\t-------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("\n\t\t\t\t\t\t\t\tDados gerais da sua planta: " + "\n\nEspécie: Lirio \nRaíz: " + getRaiz() + "\nAspecto: "+ getAspecto() + "\nClima: " + getClima());
+   }
 }
