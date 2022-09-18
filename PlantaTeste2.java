@@ -26,23 +26,35 @@ public class PlantaTeste2 {
 		System.out.println("\nQual a sua planta? \n1-Suculenta \n2-Begonia \n3-Lirio ");
 		especie = leia.nextInt();
 		if(especie > 3) {
-			System.out.println("\nOpção inválida!");
-		}
+			System.out.println("\nOpção inválida! Tente novamente com as opções a seguir:");
+			System.out.println("\nQual a sua planta? \n1-Suculenta \n2-Begonia \n3-Lirio ");
+			especie = leia.nextInt();
+		}	
+			
 		System.out.println(
 				"\nComo está a raíz da sua planta?\n1-Seca \n2-Quebradiça \n3-Coloração Duvidosa \n4-Saudável");
 		raiz = leia.nextInt();
 		if(raiz > 4) {
-			System.out.println("\nOpção inválida!");
+			System.out.println("\nOpção inválida! Tente novamente com as opções a seguir:");
+			System.out.println(
+					"\nComo está a raíz da sua planta?\n1-Seca \n2-Quebradiça \n3-Coloração Duvidosa \n4-Saudável");
+			raiz = leia.nextInt();
 		}
+		
 		System.out.println("\nComo está o aspecto geral da sua planta?\n1-Viva \n2-Capenga \n3-Pé na cova");
 		aspecto = leia.nextInt();
 		if(aspecto > 3) {
-			System.out.println("\nOpção inválida!");
+			System.out.println("\nOpção inválida! Tente novamente com as opções a seguir:");
+			System.out.println("\nComo está o aspecto geral da sua planta?\n1-Viva \n2-Capenga \n3-Pé na cova");
+			aspecto = leia.nextInt();
 		}
+		
 		System.out.println("\nComo está o clima?\n1-Frio \n2-Quente \n3-Ameno");
 		clima = leia.nextInt();
 		if(clima > 3) {
-			System.out.println("\nOpção inválida!");
+			System.out.println("\nOpção inválida! Tente novamente com as opções a seguir:");
+			System.out.println("\nComo está o clima?\n1-Frio \n2-Quente \n3-Ameno");
+			clima = leia.nextInt();
 		}
 
 		switch (raiz) {
@@ -95,50 +107,178 @@ public class PlantaTeste2 {
 		suculenta.setClima(valorClima);
 		begonia.setClima(valorClima);
 		lirio.setClima(valorClima);
-
-		System.out.println("\n\t\t\t\t\t\t\t\t\tRecomendações: ");
-    	System.out.println("\n\t\t-------------------------------------------------------------------------------------------------------------------------------------------------------");
-
+   	
 		switch (especie) {
 		case 1:
-			if ((raiz == 1 || raiz == 2) || (aspecto == 3)) {
+			suculenta.info();
+	    	System.out.println("\n\t\t-------------------------------------------------------------------------------------------------------------------------------------------------------");
+			System.out.println("\n\t\t\t\t\t\t\t\t\tRecomendações: ");
+			if (raiz ==1 && aspecto == 1 && clima != 2) {
+				suculenta.reporTerra();
+				suculenta.colocarNoSol();
+				suculenta.pararDeRegar();
+			} else if (raiz == 1 && aspecto == 1 && clima != 1) {
+				suculenta.reporTerra();
+				suculenta.tirarDoSol();
+				suculenta.regar();
+			} else if (raiz == 1 && (aspecto == 2 || aspecto == 3) && clima != 1) {
 				suculenta.trocarTerra();
 				suculenta.tirarDoSol();
-			} else if ((raiz > 0 || raiz <= 3) || (aspecto == 2 || aspecto == 3) || (clima == 2)) {
 				suculenta.regar();
-			} else if ((raiz == 3 || raiz == 4) || (aspecto == 1)) {
-				suculenta.pararDeRegar();
-			} else if ((raiz == 3 || raiz == 4) || (aspecto == 2)) {
+			} else if (raiz == 1 && (aspecto == 2 || aspecto == 3) && clima != 2) {
+				suculenta.trocarTerra();
 				suculenta.colocarNoSol();
+				suculenta.pararDeRegar();
+			} else if (raiz == 2 && aspecto == 1 && clima != 2) {
+				suculenta.reporTerra();
+				suculenta.colocarNoSol();
+				suculenta.pararDeRegar();
+			} else if (raiz == 2 && aspecto == 1 && clima != 1) {
+				suculenta.reporTerra();
+				suculenta.tirarDoSol();
+				suculenta.regar();
+			} else if (raiz == 2 && (aspecto == 2 || aspecto == 3) && clima != 1) {
+				suculenta.trocarTerra();
+				suculenta.tirarDoSol();
+				suculenta.regar();
+			} else if (raiz == 2 && (aspecto == 2 || aspecto == 3) && clima != 2) {
+				suculenta.trocarTerra();
+				suculenta.colocarNoSol();
+				suculenta.pararDeRegar();
+			} else if (raiz == 3 && aspecto == 1 && clima != 2) {
+				suculenta.reporTerra();
+				suculenta.colocarNoSol();
+				suculenta.pararDeRegar();
+			} else if (raiz == 3 && aspecto == 1 && clima != 1) {
+				suculenta.reporTerra();
+				suculenta.tirarDoSol();
+				suculenta.regar();
+			} else if (raiz == 3 && (aspecto == 2 || aspecto == 3) && clima != 1) {
+				suculenta.trocarTerra();
+				suculenta.tirarDoSol();
+				suculenta.regar();
+			} else if (raiz == 3 && (aspecto == 2 || aspecto == 3) && clima != 2) {
+				suculenta.trocarTerra();
+				suculenta.colocarNoSol();
+				suculenta.pararDeRegar();
+			} else if(raiz == 4 && aspecto ==1) {
+				System.out.println("\nParabéns!! Sua planta está ótima, continue com estes cuidados! :)");
 			}
-			suculenta.info();
+			System.out.println("\n\t\t\t*********************************************************************************************************************************************     \n\t\t\t\tElas são lindas, super fáceis de cultivar e são tão versáteis que podem ser usadas nos mais diversos tipos de decorações. \n\t\t\t\tSeja em quadro verdes ou em vasinhos espalhados pela casa, elas trarão um charme todo especial ao ambiente.   \n\t\t\t\tSuculentas são plantas que armazenam água em suas folhas, tendo assim uma aparência distinta de outras folhagens — mais grossas \n\t\t\t\te “carnudas”. Elas florescem em climas quentes e secos e não gostam muito de umidade.  \n\t\t\t\tOs cactos, por exemplo, são suculentas. Mas nem todas as suculentas são cactos — existem diversas espécies dentro do grupo.    \n\t\t\t*********************************************************************************************************************************************");
 			break;
 		case 2:
-			if (raiz == 2 || (aspecto == 3)) {
+			begonia.info();
+	    	System.out.println("\n\t\t-------------------------------------------------------------------------------------------------------------------------------------------------------");
+			System.out.println("\n\t\t\t\t\t\t\t\t\tRecomendações: ");
+			if (raiz ==1 && aspecto == 1 && clima != 2) {
+				begonia.reporTerra();
+				begonia.colocarNoSol();
+				begonia.pararDeRegar();
+			} else if (raiz == 1 && aspecto == 1 && clima != 1) {
+				begonia.reporTerra();
+				begonia.tirarDoSol();
+				begonia.regar();
+			} else if (raiz == 1 && (aspecto == 2 || aspecto == 3) && clima != 1) {
 				begonia.trocarTerra();
 				begonia.tirarDoSol();
-			} else if (raiz == 1 || (aspecto == 2 || aspecto == 3) || (clima == 2)) {
 				begonia.regar();
-			} else if ((raiz == 3 || raiz == 4) || (aspecto == 1)) {
-				begonia.pararDeRegar();
-			} else if ((raiz == 3 || raiz == 4) || (aspecto == 2)) {
+			} else if (raiz == 1 && (aspecto == 2 || aspecto == 3) && clima != 2) {
+				begonia.trocarTerra();
 				begonia.colocarNoSol();
+				begonia.pararDeRegar();
+			} else if (raiz == 2 && aspecto == 1 && clima != 2) {
+				begonia.reporTerra();
+				begonia.colocarNoSol();
+				begonia.pararDeRegar();
+			} else if (raiz == 2 && aspecto == 1 && clima != 1) {
+				begonia.reporTerra();
+				begonia.tirarDoSol();
+				begonia.regar();
+			} else if (raiz == 2 && (aspecto == 2 || aspecto == 3) && clima != 1) {
+				begonia.trocarTerra();
+				begonia.tirarDoSol();
+				begonia.regar();
+			} else if (raiz == 2 && (aspecto == 2 || aspecto == 3) && clima != 2) {
+				begonia.trocarTerra();
+				begonia.colocarNoSol();
+				begonia.pararDeRegar();
+			} else if (raiz == 3 && aspecto == 1 && clima != 2) {
+				begonia.reporTerra();
+				begonia.colocarNoSol();
+				begonia.pararDeRegar();
+			} else if (raiz == 3 && aspecto == 1 && clima != 1) {
+				begonia.reporTerra();
+				begonia.tirarDoSol();
+				begonia.regar();
+			} else if (raiz == 3 && (aspecto == 2 || aspecto == 3) && clima != 1) {
+				begonia.trocarTerra();
+				begonia.tirarDoSol();
+				begonia.regar();
+			} else if (raiz == 3 && (aspecto == 2 || aspecto == 3) && clima != 2) {
+				begonia.trocarTerra();
+				begonia.colocarNoSol();
+				begonia.pararDeRegar();
+			} else if(raiz == 4 && aspecto ==1) {
+				System.out.println("\nParabéns!! Sua planta está ótima, continue com estes cuidados! :)");
 			}
-			begonia.info();
-			System.out.println("\nPara cuidar de begônias, tente manter o solo sempre úmido, mas nunca encharcado, porque pode causar podridão nas raízes. \nQuando for regar, evite molhar as folhas, porque isso poderá causar fungos. \nAs begônias têm caules carnudos e folhas que armazenam água, por isso não precisam de rega constante.");
+			System.out.println("\n\t\t\t***************************************************************************************************************************************     \n\t\t\t\tPara cuidar de begônias, tente manter o solo sempre úmido, mas nunca encharcado, porque pode causar podridão nas raízes. \n\t\t\t\tQuando for regar, evite molhar as folhas, porque isso poderá causar fungos. \n\t\t\t\tAs begônias têm caules carnudos e folhas que armazenam água, por isso não precisam de rega constante.     \n\t\t\t***************************************************************************************************************************************");
 			break;
 		case 3:
-			if ((raiz == 1 || raiz == 2) || (aspecto == 3)) {
+			lirio.info();
+	    	System.out.println("\n\t\t-------------------------------------------------------------------------------------------------------------------------------------------------------");
+			System.out.println("\n\t\t\t\t\t\t\t\t\tRecomendações: ");
+			if (raiz ==1 && aspecto == 1 && clima != 2) {
+				lirio.reporTerra();
+				lirio.colocarNoSol();
+				lirio.pararDeRegar();
+			} else if (raiz == 1 && aspecto == 1 && clima != 1) {
+				lirio.reporTerra();
+				lirio.tirarDoSol();
+				lirio.regar();
+			} else if (raiz == 1 && (aspecto == 2 || aspecto == 3) && clima != 1) {
 				lirio.trocarTerra();
 				lirio.tirarDoSol();
-			} else if ((raiz > 0 || raiz <= 3) || (aspecto == 2 || aspecto == 3) || (clima == 2)) {
 				lirio.regar();
-			} else if ((raiz == 3 || raiz == 4) || (aspecto == 1)) {
-				lirio.pararDeRegar();
-			} else if ((raiz == 3 || raiz == 4) || (aspecto == 2)) {
+			} else if (raiz == 1 && (aspecto == 2 || aspecto == 3) && clima != 2) {
+				lirio.trocarTerra();
 				lirio.colocarNoSol();
+				lirio.pararDeRegar();
+			} else if (raiz == 2 && aspecto == 1 && clima != 2) {
+				lirio.reporTerra();
+				lirio.colocarNoSol();
+				lirio.pararDeRegar();
+			} else if (raiz == 2 && aspecto == 1 && clima != 1) {
+				lirio.reporTerra();
+				lirio.tirarDoSol();
+				lirio.regar();
+			} else if (raiz == 2 && (aspecto == 2 || aspecto == 3) && clima != 1) {
+				lirio.trocarTerra();
+				lirio.tirarDoSol();
+				lirio.regar();
+			} else if (raiz == 2 && (aspecto == 2 || aspecto == 3) && clima != 2) {
+				lirio.trocarTerra();
+				lirio.colocarNoSol();
+				lirio.pararDeRegar();
+			} else if (raiz == 3 && aspecto == 1 && clima != 2) {
+				lirio.reporTerra();
+				lirio.colocarNoSol();
+				lirio.pararDeRegar();
+			} else if (raiz == 3 && aspecto == 1 && clima != 1) {
+				lirio.reporTerra();
+				lirio.tirarDoSol();
+				lirio.regar();
+			} else if (raiz == 3 && (aspecto == 2 || aspecto == 3) && clima != 1) {
+				lirio.trocarTerra();
+				lirio.tirarDoSol();
+				lirio.regar();
+			} else if (raiz == 3 && (aspecto == 2 || aspecto == 3) && clima != 2) {
+				lirio.trocarTerra();
+				lirio.colocarNoSol();
+				lirio.pararDeRegar();
+			} else if(raiz == 4 && aspecto ==1) {
+				System.out.println("\nParabéns!! Sua planta está ótima, continue com estes cuidados! :)");
 			}
-			lirio.info();
+			System.out.println("\n\t\t\t***************************************************************************************************************************************     \n\t\t\t\tOs lírios precisam de muita luz solar e substrato com bom escoamento.  \n\t\t\t\tSe você for plantá-los diretamente no solo, observe a região do seu jardim que costuma secar mais rápido depois da chuva.  \n\t\t\t\tEsse será o local ideal. O local do plantio precisa receber luz solar pelo menos em metade do dia.     \n\t\t\t***************************************************************************************************************************************");
 			break;
 		}
 

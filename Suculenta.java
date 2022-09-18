@@ -7,36 +7,36 @@ public class Suculenta extends Planta {
 
     @Override
     public void trocarTerra() {
-        System.out.println("\nTroque sua terra");
+        System.out.println("\nTroque sua terra. E não esqueça de colocar suprimentos como areia e nutrientes!");
+    }
+    
+    @Override
+    public void reporTerra() {
+        System.out.println("\nReponha nutrientes na sua terra. \nAo decorrer do tempo, a terra tende a perder nutrientes e é preciso troca-lá para reposição.");
     }
 
     @Override
     public void regar() {
-        System.out.println("\nRegue sua planta uma vez por semana");
+        System.out.println("\nRegue sua planta uma vez por semana!");
     }
 
     @Override
     public void pararDeRegar() {
-        System.out.println("\nPare de regar sua planta");
+        System.out.println("\nPare de regar sua planta por uma semana e observe sua resposta.");
     }
 
     @Override
     public void tirarDoSol() {
-        System.out.println("\nTire sua planta do sol");
+        System.out.println("\nTire sua planta do sol direto. Suculentas precisam de iluminação solar indireta diariamente!");
     }
 
     @Override
     public void colocarNoSol() {
-        System.out.println("\nColoque sua planta no sol");
-    }
-
-    @Override
-    public void indicacao() {
-        System.out.println("\nCuidados de acordo com o clima");
+        System.out.println("\nColoque sua planta em iluminação solar indireta diariamente!");
     }
     
     public void info() {
     	System.out.println("\n\t\t-------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("\n\t\t\t\t\t\t\t\tDados gerais da sua planta: " + "\n\nEspécie: Suculenta \nRaíz: " + getRaiz() + "\nAspecto: "+ getAspecto() + "\nClima: " + getClima());
-   }
+    }
 }

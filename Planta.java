@@ -8,6 +8,8 @@ public abstract class Planta {
     private String clima;
 
     abstract public void trocarTerra();
+    
+    abstract public void reporTerra();
 
     abstract public void regar();
 
@@ -16,8 +18,6 @@ public abstract class Planta {
     abstract public void tirarDoSol();
 
     abstract public void colocarNoSol();
-
-    abstract public void indicacao();
 
     public Planta(String raiz, String aspecto, String clima) {
         this.raiz = raiz;
