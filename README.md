@@ -4,9 +4,11 @@
 
 ---
 
-<h2> Objetivos do projeto:</h2>
+> <h2> Objetivos do projeto:</h2>
+
+```
 - Aplicar os conhecimentos adquiridos durante o primeiro módulo do curso;<br>
 - Utilizar as principais funcionalidades aprendidas em Java;<br>
-
+```
 
 
